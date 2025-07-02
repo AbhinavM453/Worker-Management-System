@@ -1,0 +1,92 @@
+{% extends "User/index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+
+    .container {
+        width: 90%;
+        max-width: 1000px;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 2px solid black;
+        padding: 10px;
+        text-align: center;
+    }
+
+
+    </style>
+</head>
+
+<body>
+<form action="/edit_upost/{{ view.id }}" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="702" height="498" border="1">
+    <tr>
+      <th scope="row">Name:</th>
+      <td><label for="textfield" class="form-label"></label>
+          <input type="name" class="form-control border-2 border-dark" id="name" placeholder="Enter Name" name="name" value="{{ view.UName }}">
+</td>
+    </tr>
+    <tr>
+      <th scope="row">Email:</th>
+      <td><label for="textfield" class="form-label"></label>
+          <input type="name" class="form-control border-2 border-dark" id="name" placeholder="Enter Email" name="email" value="{{ view.Email }}"></td>
+
+    </tr>
+    <tr>
+      <th scope="row">Date of Birth:</th>
+      <td><label for="textfield" class="form-label"></label>
+          <input type="name" class="form-control border-2 border-dark" id="name" placeholder="Enter DOB" name="dob" value="{{ view.DOB }}"></td>
+
+    </tr>
+
+    <tr>
+    <th scope="row">Address:</th>
+    <td><label for="textarea"></label>
+      <textarea name="addr" id="textarea" cols="45" class="form-control border-2 border-dark" rows="5" value="{{ view.Address }}"></textarea></td>
+  </tr>
+
+  <tr>
+      <th scope="row">Contact:</th>
+      <td><label for="textfield" class="form-label"></label>
+          <input type="name" class="form-control border-2 border-dark" id="name" placeholder="Enter Contact" name="phn" value="{{ view.Contact }}"></td>
+
+    </tr>
+
+    <tr>
+      <th scope="row">Image:</th>
+      <td><label for="fileField"></label>
+          <img src="{{ view.Image }}" width="100" height="100" />
+      <input type="file" name="img" class="form-control border-2 border-dark" id="fileField" /></td>
+      
+    </tr>
+    
+      <th colspan="2" scope="row"><input type="submit" name="button" id="button" value="Edit" /></th>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
