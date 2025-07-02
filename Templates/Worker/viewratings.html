@@ -1,0 +1,71 @@
+{% extends "Worker/index.html" %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+      <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+
+    .container {
+        width: 90%;
+        max-width: 1000px;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 2px solid black;
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background-color: darkslategrey;
+        color: white;
+    }
+
+
+
+
+    </style>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="717" height="334" border="1">
+    <tr>
+      <th scope="row">Slno:</th>
+      <td>Name:</td>
+        <td>Date:</td>
+      <td>Ratings</td>
+    </tr>
+      {% for i in view %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}&nbsp;</th>
+      <td>{{ i.USER.UName }}&nbsp;</td>
+      <td>&nbsp;{{ i.date }}</td>
+        <td>{{ i.Ratings }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
